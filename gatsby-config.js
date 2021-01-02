@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: "Personal Site",
@@ -6,7 +9,7 @@ module.exports = {
     {
       resolve: "gatsby-source-datocms",
       options: {
-        apiToken: "82de314730996a26f34aef14a88b8d",
+        apiToken: process.env.DATO_CMS_API_KEY,
       },
     },
     "gatsby-plugin-emotion",

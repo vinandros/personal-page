@@ -1,0 +1,26 @@
+import { graphql, useStaticQuery } from "gatsby";
+
+export const DataES = () => {
+  const result = useStaticQuery(
+    graphql`
+      query {
+        allDatoCmsHerospanish {
+          nodes {
+            title
+            personalquote
+          }
+        }
+        allDatoCmsNavigationspanish(sort: { fields: id }) {
+          nodes {
+            title
+            id
+            slug
+          }
+        }
+      }
+    `
+  );
+  const HeroData = result.allDatoCmsHerospanish.nodes[0];
+  const NavigationData = result.allDatoCmsNavigationspanish.nodes;
+  return { HeroData, NavigationData };
+};
