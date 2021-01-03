@@ -7,10 +7,13 @@ const GlobalStyles = () => {
       styles={css`
         html {
           box-sizing: border-box;
+          /* overflow-x: hidden; */
         }
         *,
         *:before,
         *:after {
+          margin: 0;
+          padding: 0;
           box-sizing: inherit;
         }
         :root {
@@ -22,6 +25,9 @@ const GlobalStyles = () => {
           --switch-bg: #ecf0f3;
           --switch-primary-sc: #b6b9bb;
           --switch-secondary-sc: #ffffff;
+        }
+        body {
+          background-color: white;
         }
         ul,
         ol {

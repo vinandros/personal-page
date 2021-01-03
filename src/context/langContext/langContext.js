@@ -11,11 +11,11 @@ const LangContext = createContext(initialState);
 const LangProvider = ({ children }) => {
   const [langState, setLangState] = React.useState("en");
   // =====================English=======================================
-  const [heroEN, setHeroEN] = useState({});
-  const [navigationEN, setNavigationEN] = useState({});
+  const [heroEN, setHeroEN] = useState(undefined);
+  const [navigationEN, setNavigationEN] = useState(undefined);
   // =====================Spanish=======================================
-  const [heroES, setHeroES] = useState({});
-  const [navigationES, setNavigationES] = useState({});
+  const [heroES, setHeroES] = useState(undefined);
+  const [navigationES, setNavigationES] = useState(undefined);
   // ============================================================
   const EN = DataEN();
   const ES = DataES();

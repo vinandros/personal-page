@@ -3,7 +3,7 @@ require("dotenv").config({
 });
 module.exports = {
   siteMetadata: {
-    title: "Personal Site",
+    siteUrl: `https://www.vinandros.com`,
   },
   plugins: [
     {

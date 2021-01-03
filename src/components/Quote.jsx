@@ -57,26 +57,23 @@ const PCite = styled.p`
 `;
 
 const Quote = () => {
-  const {
-    heroData: { personalquote },
-  } = React.useContext(LangContext);
-  console.log(personalquote);
+  const { heroData } = React.useContext(LangContext);
+  if (!heroData) return null;
+  const { personalquote } = heroData;
   return (
-    <>
-      <CodeQ>
-        <Blockquote>&lt;blockquote&gt;</Blockquote>
-        <PTag>&lt;p&gt;</PTag>
-        <PQuote>“{personalquote}”</PQuote>
-        <PTag>&lt;/p&gt;</PTag>
-        <cite>
-          <CiteTag>&lt;cite&gt; </CiteTag>
-          <PCite>Avicii(Tim Bergling)</PCite>
-          <CiteTag> &lt;/cite&gt;</CiteTag>
-        </cite>
+    <CodeQ>
+      <Blockquote>&lt;blockquote&gt;</Blockquote>
+      <PTag>&lt;p&gt;</PTag>
+      <PQuote>“{personalquote}”</PQuote>
+      <PTag>&lt;/p&gt;</PTag>
+      <cite>
+        <CiteTag>&lt;cite&gt; </CiteTag>
+        <PCite>Avicii(Tim Bergling)</PCite>
+        <CiteTag> &lt;/cite&gt;</CiteTag>
+      </cite>
 
-        <Blockquote>&lt;/blockquote&gt;</Blockquote>
-      </CodeQ>
-    </>
+      <Blockquote>&lt;/blockquote&gt;</Blockquote>
+    </CodeQ>
   );
 };
 

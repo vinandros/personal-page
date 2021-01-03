@@ -1,23 +1,24 @@
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import React from "react";
-import LangContext from "../context/langContext/langContext";
+import Logo from "./Logo";
+import Nav from "./Nav";
 
 const Header = () => {
-  const { navigationData } = React.useContext(LangContext);
-
-  if (Object.keys(navigationData).length === 0) {
-    return null;
-  }
   return (
-    <header>
-      <nav>
-        <ul>
-          {navigationData.map((item) => (
-            <li key={item.id}>
-              <a href={`#${item.slug}`}>{item.title}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <header
+      css={css`
+        background-color: red;
+      `}
+    >
+      <div
+        css={css`
+          position: relative;
+        `}
+      >
+        <Logo />
+        <Nav />
+      </div>
     </header>
   );
 };
