@@ -7,7 +7,8 @@ const GlobalStyles = () => {
       styles={css`
         html {
           box-sizing: border-box;
-          /* overflow-x: hidden; */
+          margin: 0;
+          padding: 0;
         }
         *,
         *:before,

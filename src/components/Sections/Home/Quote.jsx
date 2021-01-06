@@ -1,56 +1,47 @@
 import styled from "@emotion/styled";
 import React from "react";
-import LangContext from "../context/langContext/langContext";
+import LangContext from "../../../context/langContext/langContext";
 
 const CodeQ = styled.code`
   display: block;
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
   border-radius: 5px;
   padding: 1rem;
   color: white;
   background-color: var(--quote-bg, #0e0e0e);
-
+  margin-top: 5vh;
   @media (min-width: 768px) {
-    width: 55%;
+    width: 100%;
+    /* margin: 2vw; */
   }
 `;
 
 const Blockquote = styled.blockquote`
   margin: 0;
-  line-height: 0.2;
   padding: 0;
+  font-size: 5vw;
   @media (min-width: 768px) {
-    margin-left: 1rem;
+    font-size: 1.5vw;
   }
 `;
 
-const PTag = styled.p`
+const baseStyleP = styled.p`
+  font-size: 5vw;
+  @media (min-width: 768px) {
+    font-size: 1.5vw;
+  }
+`;
+
+const Tag = styled(baseStyleP)`
   margin-left: 0.5rem;
-  line-height: 0.2;
   @media (min-width: 768px) {
     margin-left: 2rem;
   }
 `;
 
-const CiteTag = styled.p`
-  margin-left: 0.5rem;
-  line-height: 0.2;
-  @media (min-width: 768px) {
-    margin-left: 2rem;
-  }
-`;
-
-const PQuote = styled.p`
+const PText = styled(baseStyleP)`
   margin-left: 1.5rem;
-  line-height: 1.3;
-  @media (min-width: 768px) {
-    margin-left: 4rem;
-  }
-`;
-
-const PCite = styled.p`
-  margin-left: 1.5rem;
+  font-weight: bold;
   @media (min-width: 768px) {
     margin-left: 4rem;
   }
@@ -63,13 +54,13 @@ const Quote = () => {
   return (
     <CodeQ>
       <Blockquote>&lt;blockquote&gt;</Blockquote>
-      <PTag>&lt;p&gt;</PTag>
-      <PQuote>“{personalquote}”</PQuote>
-      <PTag>&lt;/p&gt;</PTag>
+      <Tag>&lt;p&gt;</Tag>
+      <PText>“{personalquote}”</PText>
+      <Tag>&lt;/p&gt;</Tag>
       <cite>
-        <CiteTag>&lt;cite&gt; </CiteTag>
-        <PCite>Avicii(Tim Bergling)</PCite>
-        <CiteTag> &lt;/cite&gt;</CiteTag>
+        <Tag>&lt;cite&gt; </Tag>
+        <PText>Avicii(Tim Bergling)</PText>
+        <Tag> &lt;/cite&gt;</Tag>
       </cite>
 
       <Blockquote>&lt;/blockquote&gt;</Blockquote>

@@ -1,19 +1,22 @@
 import React from "react";
-import GlobalStyles from "../components/GlobalStyles";
-import loadable from "@loadable/component";
-import Home from "../components/Home";
-import Hero from "../components/Hero";
-
-const Snowfall = loadable(() => import("../components/SnowFall"));
+import Home from "../components/Sections/Home/Home";
+import Hero from "../components/Sections/Hero";
+import ProjectsSection from "../components/Sections/Projects";
+import Contact from "../components/Sections/Contact";
+import Footer from "../components/Sections/Footer";
+import Header from "../components/Sections/Header/Header";
+import Layout from "../components/Layouts/Layout";
 
 const IndexPage = () => {
   return (
-    <>
-      <GlobalStyles />
-      <Snowfall />
+    <Layout title="FullStack Developer">
       <Home />
-      <Hero />
-    </>
+      {/* <Header /> */}
+      {/* <Hero /> */}
+      {/* <ProjectsSection /> */}
+      {/* <Contact /> */}
+      {/* <Footer /> */}
+    </Layout>
   );
 };
 

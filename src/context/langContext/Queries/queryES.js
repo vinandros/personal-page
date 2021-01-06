@@ -7,6 +7,8 @@ export const DataES = () => {
         allDatoCmsHerospanish {
           nodes {
             title
+            titletwo
+            titlethree
             personalquote
           }
         }

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import LangContext from "../context/langContext/langContext";
+import LangContext from "../../../../context/langContext/langContext";
 
 const SwitchContainer = styled.label`
   display: inline-flex;
@@ -43,6 +43,11 @@ const Toggle = styled.div`
     8px 4px 12px 0px var(--switch-secondary-sc),
     4px 4px 4px 0px var(--switch-secondary-sc) inset,
     -4px -4px 4px 0px var(--switch-secondary-sc) inset;
+
+  @media (max-width: 768px) {
+    height: 15px;
+    width: 30px;
+  }
 `;
 
 const LangToggle = () => {

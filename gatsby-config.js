@@ -25,5 +25,30 @@ module.exports = {
       },
       __key: "images",
     },
+    `gatsby-plugin-fontawesome-css`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Personal Site`,
+        short_name: `Portfolio`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+      },
+    },
+    {
+      resolve: `@el7cosmos/gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: "Open Sans",
+            variants: ["600", "800"],
+            subsets: ["latin-ext"],
+          },
+        ],
+      },
+    },
   ],
 };
