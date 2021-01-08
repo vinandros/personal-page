@@ -1,57 +1,60 @@
+import { ThemeContext } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 const LogoStyles = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 14vw;
   height: 14vw;
+  color: red;
   @media (min-width: 768px) {
     width: 5vw;
-    height: 5vw;
+    height: 3vw;
   }
 `;
 const Logo = () => {
+  const { dark } = React.useContext(ThemeContext);
   return (
     <LogoStyles>
       <a href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          // width="65"
-          // height="65"
-
-          viewBox="0 0 65 65"
+          // width="80"
+          // height="80"
+          viewBox="0 0 80 80"
         >
-          <g id="Group_1" data-name="Group 1" transform="translate(-141 -97)">
-            <g
+          <g id="Group_2" transform="translate(-131 -182)">
+            <circle
               id="Ellipse_4"
-              data-name="Ellipse 4"
-              transform="translate(141 97)"
-              stroke="#000"
-              strokeWidth="1"
-            >
-              <circle cx="32.5" cy="32.5" r="32.5" stroke="none" />
-              <circle cx="32.5" cy="32.5" r="32" fill="none" />
-            </g>
+              cx="40"
+              cy="40"
+              r="40"
+              fill={dark ? "#fff" : "#000"}
+              transform="translate(131 182)"
+            />
             <text
-              id="VIN."
-              transform="translate(156 143)"
+              id="V"
+              transform="translate(144 232)"
               fill="#fff"
-              fontSize="20"
-              fontFamily="Open Sans"
-              fontWeight="800"
+              fontSize="45"
+              fontFamily="OpenSans-Bold, Open Sans"
+              fontWeight="700"
             >
               <tspan x="0" y="0">
-                VIN.
+                V
               </tspan>
             </text>
             <text
-              id="KE"
-              transform="translate(154 126)"
+              id="A"
+              transform="translate(165 244)"
               fill="#fff"
-              fontSize="20"
-              fontFamily="Open Sans"
-              fontWeight="800"
+              fontSize="45"
+              fontFamily="OpenSans-Bold, Open Sans"
+              fontWeight="700"
             >
               <tspan x="0" y="0">
-                KE
+                A
               </tspan>
             </text>
           </g>

@@ -1,9 +1,12 @@
 import React from "react";
 import { Global, css } from "@emotion/react";
+import ThemeContext from "../../context/themeContext/themeProvider";
 
 const GlobalStyles = () => {
+  const { dark } = React.useContext(ThemeContext);
   return (
     <Global
+      dark={dark}
       styles={css`
         html {
           box-sizing: border-box;
@@ -18,17 +21,31 @@ const GlobalStyles = () => {
           box-sizing: inherit;
         }
         :root {
-          --primary-color: #39bbf0;
-          --green-complementary: #2ce8b7; //#87E82C #38E8BA
-          --secondary-color: #231f20;
-          --quote-bg: #0e0e0e;
+          --bg-color: ${dark ? "#212121" : "#fff"};
+          --text-color: ${dark ? "#fff" : "#000"};
 
-          --switch-bg: #ecf0f3;
-          --switch-primary-sc: #b6b9bb;
-          --switch-secondary-sc: #ffffff;
+          /* others color */
+          --quote-bg: ${dark ? "#bbbbbb" : "#000"};
+          --quote-text-color: ${dark ? "#000" : "#fff"};
+
+          --primary-color: #212121;
+          --primary-color-light: #484848;
+          --primary-color-dark: #000000;
+          --secondary-color: #c8e6c9;
+          --secondary-color-light: #fbfffc;
+          --secondary-color-dark: #97b498;
+
+          --text-color-primary: #ffffff;
+          --text-color-secondary: #000000;
+
+          /* transtions delays */
+          --lang-transition: 0.5s;
+          /* color transitions */
+          --color-transition: 0.3s;
         }
         body {
-          background-color: white;
+          background-color: ${dark ? "#212121" : "#fff"};
+          transition: background-color ease-in 0.3s;
         }
         ul,
         ol {

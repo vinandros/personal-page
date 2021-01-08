@@ -1,74 +1,82 @@
-import styled from "@emotion/styled";
 import React from "react";
+import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import ThemeContext from "../../../../context/themeContext/themeProvider";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 import LangContext from "../../../../context/langContext/langContext";
+import { css } from "@emotion/react";
 
-const SwitchContainer = styled.label`
-  display: inline-flex;
+const Label = styled.label`
+  background-color: var(--text-primary-color);
+  display: flex;
   align-items: center;
-  cursor: pointer;
-  color: var(--switch-bg);
-  .label-text {
-    margin-left: 16px;
-  }
-`;
-
-const Indicator = styled.div`
-  height: 100%;
-  width: 200%;
-  background: var(--switch-bg);
-  border-radius: 15px;
-  transform: translate3d(-75%, 0, 0);
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  box-shadow: -8px -4px 8px 0px var(--switch-primary-sc),
-    8px 4px 12px 0px var(--switch-secondary-sc);
-  ${(props) => (props.checked ? "transform: translate3d(25%, 0, 0);" : "")}
-`;
-
-const ToggleStateInput = styled.input`
-  display: none;
-  &:checked ~ ${Indicator} {
-    transform: translate3d(25%, 0, 0);
-  }
-`;
-
-const Toggle = styled.div`
-  isolation: isolate;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
   position: relative;
-  background-color: var(--switch-bg);
-  height: 30px;
-  width: 60px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: -8px -4px 8px 0px var(--switch-primary-sc),
-    8px 4px 12px 0px var(--switch-secondary-sc),
-    4px 4px 4px 0px var(--switch-secondary-sc) inset,
-    -4px -4px 4px 0px var(--switch-secondary-sc) inset;
 
-  @media (max-width: 768px) {
-    height: 15px;
-    width: 30px;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    width: 35px;
+    height: 35px;
+    font-size: 28px;
+  }
+`;
+
+const Input = styled.input`
+  position: absolute;
+  opacity: 0;
+`;
+
+const Transition = styled.p`
+  font-weight: bold;
+  color: var(--text-color);
+  transition: color ease-in var(--color-transition);
+  opacity: ${({ state }) => {
+    switch (state) {
+      case "entering":
+        return 0;
+      case "entered":
+        return 1;
+      case "exiting":
+        return 1;
+      case "exited":
+        return 0;
+    }
+  }};
+`;
+const Wrapper = styled.div`
+  @media (min-width: 768px) {
+    padding: 3px;
   }
 `;
 
 const LangToggle = () => {
-  const { toggleLang } = React.useContext(LangContext);
-  const [indicatorState, setIndicatorState] = React.useState(false);
-  const handleChange = () => {
-    setIndicatorState(indicatorState ? false : true);
-    toggleLang();
-  };
+  const { lang, toggleLang } = React.useContext(LangContext);
   return (
-    <SwitchContainer>
-      <Toggle>
-        <ToggleStateInput
-          type="checkbox"
-          checked={indicatorState}
-          name="checkbox"
-          onChange={handleChange}
-        />
-        <Indicator />
-      </Toggle>
-    </SwitchContainer>
+    <Wrapper>
+      <Input
+        onChange={toggleLang}
+        checked={lang}
+        type="checkbox"
+        name="langToogle"
+        id="langToogle"
+      />
+      <Label htmlFor="langToogle">
+        <SwitchTransition mode="out-in">
+          <CSSTransition key={lang} timeout={300}>
+            {(state) => (
+              <Transition state={state}>
+                {lang === "es" ? "en" : "es"}
+              </Transition>
+            )}
+          </CSSTransition>
+        </SwitchTransition>
+      </Label>
+    </Wrapper>
   );
 };
 

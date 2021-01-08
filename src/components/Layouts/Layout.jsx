@@ -9,7 +9,7 @@ const LayoutS = styled.main`
   max-width: 87vw;
   @media (min-width: 768px) {
     margin: 0 auto;
-    max-width: 85vw;
+    max-width: 70vw;
   }
 `;
 
