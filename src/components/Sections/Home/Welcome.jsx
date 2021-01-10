@@ -47,7 +47,6 @@ const Welcome = () => {
   const { heroData } = React.useContext(LangContext);
   if (!heroData) return null;
   const { title, titletwo, titlethree } = heroData;
-  console.log("Rerender");
   return (
     <SwitchTransition mode="out-in">
       <Transition key={titletwo} timeout={100}>

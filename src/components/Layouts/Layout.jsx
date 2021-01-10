@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
-import loadable from "@loadable/component";
+// import loadable from "@loadable/component";
 import GlobalStyles from "../Styles/GlobalStyles";
 import Header from "../Sections/Header/Header";
 import { Helmet } from "react-helmet";
+import Custom from "./Custom/Custom";
 const LayoutS = styled.main`
   margin: 0 auto;
   max-width: 87vw;
@@ -13,7 +14,7 @@ const LayoutS = styled.main`
   }
 `;
 
-const Snowfall = loadable(() => import("../Styles/SnowFall"));
+// const Snowfall = loadable(() => import("../Styles/SnowFall"));
 
 const Layout = ({ children, title }) => {
   return (
@@ -26,6 +27,7 @@ const Layout = ({ children, title }) => {
         </Helmet>
         <Header />
         {children}
+        <Custom />
       </LayoutS>
     </>
   );

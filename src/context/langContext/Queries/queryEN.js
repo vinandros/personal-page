@@ -10,6 +10,8 @@ export const DataEN = () => {
             titletwo
             titlethree
             personalquote
+            about
+            abouttwo
           }
         }
         allDatoCmsNavigationenglish(sort: { fields: id }) {

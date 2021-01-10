@@ -10,6 +10,8 @@ export const DataES = () => {
             titletwo
             titlethree
             personalquote
+            about
+            abouttwo
           }
         }
         allDatoCmsNavigationspanish(sort: { fields: id }) {

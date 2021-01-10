@@ -4,7 +4,8 @@ import SnowfallComponent from "react-snowfall";
 const SnowFall = () => {
   return (
     <SnowfallComponent // Changes the snowflake color
-      // color="white"
+      // color="#000"
+      color="#fff"
       // Applied to the canvas element
       // style={{ background: "#fff" }}
       // Controls the number of snowflakes that are created (default 150)

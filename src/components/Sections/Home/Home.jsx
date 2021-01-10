@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import React from "react";
-import Custom from "../Header/Custom/Custom";
 import Quote from "./Quote";
 import Welcome from "./Welcome";
 
@@ -8,19 +7,20 @@ const HomeSection = styled.main`
   width: 100%;
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
-    /* flex-direction: row; */
-  }
+  height: 100vh;
+`;
 
-  /* background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(0, 171, 255, 1) 75%,
-    rgba(0, 0, 0, 1) 100%
-  ); */
-  /* background-color: white; */
-  /* background-color: red; */
+const Link = styled.a`
+  /* display: none; */
+  align-self: center;
+  margin-top: 4rem;
+  outline: 2px outset black;
+  padding: 0.2rem 1.5rem;
+  color: var(--text-color);
+  opacity: 0.87;
+  @media (min-width: 768px) {
+    display: inherit;
+  }
 `;
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
     <HomeSection id="home">
       <Welcome />
       <Quote />
-      <Custom />
+      <Link href="#about">Go</Link>
     </HomeSection>
   );
 };

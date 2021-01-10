@@ -12,6 +12,7 @@ const GlobalStyles = () => {
           box-sizing: border-box;
           margin: 0;
           padding: 0;
+          scroll-behavior: smooth;
         }
         *,
         *:before,
@@ -31,12 +32,9 @@ const GlobalStyles = () => {
           --primary-color: #212121;
           --primary-color-light: #484848;
           --primary-color-dark: #000000;
-          --secondary-color: #c8e6c9;
+          --secondary-color: #abf0ad;
           --secondary-color-light: #fbfffc;
           --secondary-color-dark: #97b498;
-
-          --text-color-primary: #ffffff;
-          --text-color-secondary: #000000;
 
           /* transtions delays */
           --lang-transition: 0.5s;
@@ -46,6 +44,7 @@ const GlobalStyles = () => {
         body {
           background-color: ${dark ? "#212121" : "#fff"};
           transition: background-color ease-in 0.3s;
+          font-family: "Open Sans";
         }
         ul,
         ol {
