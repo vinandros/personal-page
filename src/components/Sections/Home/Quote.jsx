@@ -60,6 +60,7 @@ const PText = styled(baseStyleP)`
 
 const Quote = () => {
   const { quotes } = React.useContext(LangContext);
+  if (!quotes) return null;
   const { personalquote } = quotes;
   return (
     <CodeQ>

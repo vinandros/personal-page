@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 
 const HeroAbout = () => {
   const { hero } = React.useContext(LangContext);
+  if (!hero) return null;
   const { fistParagraph, secondParagraph, thirdParagraph } = hero;
   return (
     <Wrapper>

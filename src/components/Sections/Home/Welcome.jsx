@@ -44,6 +44,7 @@ const Dev = styled(TitleStyle)`
 
 const Welcome = () => {
   const { home } = React.useContext(LangContext);
+  if (!home) return null;
   const { title, titletwo, titlethree } = home;
   return (
     <SwitchTransition mode="out-in">
