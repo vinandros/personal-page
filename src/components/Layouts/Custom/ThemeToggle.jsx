@@ -10,17 +10,9 @@ const Label = styled.label`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
   border-radius: 50%;
-  width: 26px;
-  height: 26px;
   position: relative;
   cursor: pointer;
-  @media (min-width: 768px) {
-    width: 35px;
-    height: 35px;
-    font-size: 22px;
-  }
 `;
 
 const Input = styled.input`
@@ -31,9 +23,6 @@ const Input = styled.input`
 const Transition = styled.div`
   color: var(--text-color);
   transition: color ease-in var(--color-transition);
-  @media (min-width: 768px) {
-    padding-left: 3px;
-  }
   opacity: ${({ state }) => {
     switch (state) {
       case "entering":
@@ -49,16 +38,11 @@ const Transition = styled.div`
     }
   }};
 `;
-const Wrapper = styled.div`
-  @media (min-width: 768px) {
-    padding: 3px;
-  }
-`;
 
 const ThemeToggle = () => {
   const { dark, toggleDark } = React.useContext(ThemeContext);
   return (
-    <Wrapper>
+    <>
       <Input
         onChange={toggleDark}
         checked={dark}
@@ -74,18 +58,14 @@ const ThemeToggle = () => {
                 {dark ? (
                   <FontAwesomeIcon icon={faSun} color="#fff" />
                 ) : (
-                  <FontAwesomeIcon
-                    icon={faMoon}
-                    color="#000"
-                    flip="horizontal"
-                  />
+                  <FontAwesomeIcon icon={faMoon} color="#000" />
                 )}
               </Transition>
             )}
           </CSSTransition>
         </SwitchTransition>
       </Label>
-    </Wrapper>
+    </>
   );
 };
 

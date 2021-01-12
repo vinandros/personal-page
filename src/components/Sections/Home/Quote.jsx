@@ -2,65 +2,60 @@ import styled from "@emotion/styled";
 import React from "react";
 import { Transition, SwitchTransition } from "react-transition-group";
 import LangContext from "../../../context/langContext/langContext";
+import BREAKPOINT from "../../Media";
 
 const CodeQ = styled.code`
   display: block;
   width: 100%;
-  border-radius: 5px;
   padding: 1rem;
   color: var(--quote-text-color);
   background-color: var(--quote-bg);
   transition: background-color ease-in var(--color-transition);
   transition: color ease-in var(--color-transition);
   margin-top: 5vh;
-  @media (min-width: 768px) {
-    width: 100%;
-  }
+  outline: 3px solid var(--secondary-color);
 `;
 
 const Blockquote = styled.blockquote`
   margin: 0;
   padding: 0;
-  font-size: 5vw;
-  @media (min-width: 768px) {
-    font-size: 1.5vw;
-  }
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1.5rem);
+  opacity: 0.65;
 `;
 
 const baseStyleP = styled.p`
-  font-size: 5vw;
-  @media (min-width: 768px) {
-    font-size: 1.5vw;
-  }
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1.5rem);
 `;
 
 const Tag = styled(baseStyleP)`
   margin-left: 0.5rem;
-  @media (min-width: 768px) {
-    margin-left: 2rem;
+  opacity: 0.65;
+  @media (min-width: ${BREAKPOINT.md}) {
+    margin-left: 1.5rem;
   }
 `;
 
 const PText = styled(baseStyleP)`
-  margin-left: 1.5rem;
-  font-weight: bold;
-  @media (min-width: 768px) {
-    margin-left: 4rem;
-  }
-  opacity: 0.8;
+  margin-left: 1rem;
+  font-weight: 800;
   transition: opacity ease-in var(--lang-transition);
   opacity: ${({ state }) => {
     switch (state) {
       case "entering":
         return 0;
       case "entered":
-        return 0.8;
+        return 0.87;
       case "exiting":
-        return 0.8;
+        return 0.9;
       case "exited":
         return 0;
+      default:
+        return 0.87;
     }
   }};
+  @media (min-width: ${BREAKPOINT.md}) {
+    margin-left: 2.5rem;
+  }
 `;
 
 const Quote = () => {

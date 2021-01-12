@@ -1,6 +1,10 @@
 import React from "react";
 import { Global, css } from "@emotion/react";
 import ThemeContext from "../../context/themeContext/themeProvider";
+import OpenSansExtBoldWoff from "../../fonts/open-sans-v18-latin-ext-800.woff";
+import OpenSansExtBoldWoff2 from "../../fonts/open-sans-v18-latin-ext-800.woff2";
+import OpenSansRegularWoff from "../../fonts/open-sans-v18-latin-ext-regular.woff2";
+import OpenSansRegularWoff2 from "../../fonts/open-sans-v18-latin-ext-regular.woff2";
 
 const GlobalStyles = () => {
   const { dark } = React.useContext(ThemeContext);
@@ -8,6 +12,20 @@ const GlobalStyles = () => {
     <Global
       dark={dark}
       styles={css`
+        @font-face {
+          font-family: "Open Sans";
+          font-style: normal;
+          font-weight: 800;
+          src: local(""), url(${OpenSansExtBoldWoff2}) format("woff2"),
+            url(${OpenSansExtBoldWoff}) format("woff");
+        }
+        @font-face {
+          font-family: "Open Sans";
+          font-style: normal;
+          font-weight: 600;
+          src: local(""), url(${OpenSansRegularWoff2}) format("woff2"),
+            url(${OpenSansRegularWoff}) format("woff");
+        }
         html {
           box-sizing: border-box;
           margin: 0;

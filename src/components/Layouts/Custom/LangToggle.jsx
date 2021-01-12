@@ -8,18 +8,10 @@ const Label = styled.label`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
   border-radius: 50%;
-  width: 26px;
-  height: 26px;
   position: relative;
-
   cursor: pointer;
-  @media (min-width: 768px) {
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
-  }
+  font-size: 14px;
 `;
 
 const Input = styled.input`
@@ -28,7 +20,7 @@ const Input = styled.input`
 `;
 
 const Transition = styled.p`
-  font-weight: bold;
+  font-weight: 800;
   color: var(--text-color);
   transition: color ease-in var(--color-transition);
   opacity: ${({ state }) => {
@@ -46,16 +38,11 @@ const Transition = styled.p`
     }
   }};
 `;
-const Wrapper = styled.div`
-  @media (min-width: 768px) {
-    padding: 3px;
-  }
-`;
 
 const LangToggle = () => {
   const { lang, toggleLang } = React.useContext(LangContext);
   return (
-    <Wrapper>
+    <>
       <Input
         onChange={toggleLang}
         checked={lang}
@@ -74,7 +61,7 @@ const LangToggle = () => {
           </CSSTransition>
         </SwitchTransition>
       </Label>
-    </Wrapper>
+    </>
   );
 };
 

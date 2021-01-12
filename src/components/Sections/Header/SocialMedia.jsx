@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import styled from "@emotion/styled";
+import BREAKPOINT from "../../Media";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,18 +16,14 @@ const Wrapper = styled.div`
 `;
 
 const Icons = styled.div`
-  font-size: 5vw;
+  font-size: clamp(0.7rem, 0.7rem + 2vw, 2rem);
   display: flex;
-
-  @media (min-width: 768px) {
-    font-size: 2vw;
-  }
 `;
 const LinkBaseS = styled.a`
   color: #bbbbbb;
-  margin-right: 0.5rem;
-  @media (min-width: 768px) {
-    margin-right: 1rem;
+  margin-right: 0.2rem;
+  @media (min-width: ${BREAKPOINT.md}) {
+    margin-right: 0.4rem;
   }
 `;
 
@@ -49,17 +46,15 @@ const Line = styled.div`
   position: relative;
   height: 1px;
   outline: var(--secondary-color) solid 1px;
-  width: 70px;
-
+  width: 7vw;
   background-color: var(--secondary-color);
-  margin-right: 0.5rem;
+  margin-right: 0.2rem;
+  @media (min-width: ${BREAKPOINT.md}) {
+    margin-right: 0.4rem;
+  }
 
   &:last-of-type {
     margin-right: 0;
-  }
-  @media (min-width: 768px) {
-    margin-right: 1rem;
-    width: 200px;
   }
 `;
 
@@ -68,13 +63,6 @@ const SocialMedia = () => {
     <Wrapper>
       <Line />
       <Icons>
-        <Instagram
-          href="https://www.instagram.com/vinandros/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faInstagram} />
-        </Instagram>
         <BlackIcon
           href="https://github.com/vinandros"
           target="_blank"
@@ -82,6 +70,13 @@ const SocialMedia = () => {
         >
           <FontAwesomeIcon icon={faGithub} />
         </BlackIcon>
+        <Instagram
+          href="https://www.instagram.com/vinandros/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faInstagram} />
+        </Instagram>
         <BlackIcon
           href="https://vinandros.medium.com/"
           target="_blank"

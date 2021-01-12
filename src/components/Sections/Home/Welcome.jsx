@@ -2,14 +2,15 @@ import styled from "@emotion/styled";
 import React from "react";
 import LangContext from "../../../context/langContext/langContext";
 import { Transition, SwitchTransition } from "react-transition-group";
-import { keyframes } from "@emotion/react";
+import BREAKPOINT from "../../Media";
+// import { keyframes } from "@emotion/react";
 
-const EaseIn = keyframes``;
+// const EaseIn = keyframes``;
 
 const Title = styled.h1`
   font-family: "Open Sans", sans-serif;
-  font-size: 6vw;
-  margin-top: 3vh;
+  font-size: clamp(0.8rem, 0.8rem + 2vw, 3rem);
+  margin-top: 1rem;
   color: var(--text-color);
   transition: color ease-in var(--color-transition);
   transition: opacity ease-in var(--lang-transition);
@@ -23,14 +24,12 @@ const Title = styled.h1`
         return 0.87;
       case "exited":
         return 0;
+      default:
+        return 1;
     }
   }};
-
-  @media (min-width: 768px) {
-    font-size: 2.5vw;
-    font-weight: 800;
-    width: 100%;
-    margin-top: 10vh;
+  @media (min-width: ${BREAKPOINT.md}) {
+    margin-top: 4rem;
   }
 `;
 
@@ -39,7 +38,10 @@ const TitlebaseStyle = styled.span`
 `;
 const Hi = styled(TitlebaseStyle)``;
 
-const Dev = styled(TitlebaseStyle)``;
+const Dev = styled(TitlebaseStyle)`
+  color: var(--secondary-color);
+  font-weight: 800;
+`;
 
 const Description = styled(TitlebaseStyle)``;
 

@@ -11,7 +11,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,22 +21,13 @@ const Wrapper = styled.div`
   color: var(--text-color);
   opacity: 0.87;
   transition: color ease-in var(--color-transition);
-  @media (min-width: 768px) {
-    margin-top: 5rem;
-  }
 `;
 const SectionWrapper = styled.ul`
   width: 100%;
   margin-left: 0;
   padding-left: 0;
-  @media (min-width: 768px) {
-    margin-top: 3rem;
-  }
-  @media (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const IconWrapper = styled.li`
@@ -45,13 +35,8 @@ const IconWrapper = styled.li`
   align-items: center;
   justify-content: flex-start;
   width: auto;
-  margin-right: 1rem;
-  margin-top: 1rem;
-
-  @media (min-width: 768px) {
-    width: 220px;
-    height: 70px;
-  }
+  width: 155px;
+  height: 50px;
 
   & p {
     margin-left: 0.5rem;
@@ -101,7 +86,7 @@ const Stack = () => {
             color="var(--secondary-color)"
           />
           <FontAwesomeIcon icon={faJs} size="2x" color="#EFD81D" />
-          <p>Javascript ES6</p>
+          <p>ES6</p>
         </IconWrapper>
         <IconWrapper>
           <FontAwesomeIcon
@@ -140,24 +125,18 @@ const Stack = () => {
             xmlns="http://www.w3.org/2000/svg"
             xlink="http://www.w3.org/1999/xlink"
             width="25"
-            height="50"
-            viewBox="0 0 25 50"
+            height="40"
+            viewBox="0 0 20 40"
           >
             <image
               id="mongo"
               width="25"
-              height="50"
+              height="40"
               href="data:image/png;base64,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"
             />
           </svg>
 
-          <p
-            css={css`
-              margin-left: -1rem;
-            `}
-          >
-            MongoDB
-          </p>
+          <p>MongoDB</p>
         </IconWrapper>
         <IconWrapper>
           <FontAwesomeIcon
@@ -180,13 +159,7 @@ const Stack = () => {
             />
           </svg>
 
-          <p
-            css={css`
-              margin-left: -1rem;
-            `}
-          >
-            Emotion
-          </p>
+          <p>Emotion</p>
         </IconWrapper>
       </SectionWrapper>
     </Wrapper>

@@ -38,17 +38,5 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
-    {
-      resolve: `@el7cosmos/gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: "Open Sans",
-            variants: ["600", "800"],
-            subsets: ["latin-ext"],
-          },
-        ],
-      },
-    },
   ],
 };

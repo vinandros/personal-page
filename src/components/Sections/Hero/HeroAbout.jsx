@@ -11,11 +11,6 @@ const Wrapper = styled.div`
   opacity: 0.87;
 
   opacity: 0.87;
-  @media (min-width: 768px) {
-    margin-left: 1.5rem;
-    margin-top: 0;
-    max-width: 55%;
-  }
 `;
 
 const HeroAbout = () => {

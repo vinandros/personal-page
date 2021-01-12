@@ -11,16 +11,13 @@ const HomeSection = styled.main`
 `;
 
 const Link = styled.a`
-  /* display: none; */
   align-self: center;
   margin-top: 4rem;
   outline: 2px outset black;
   padding: 0.2rem 1.5rem;
   color: var(--text-color);
   opacity: 0.87;
-  @media (min-width: 768px) {
-    display: inherit;
-  }
+  font-weight: bold;
 `;
 
 const Home = () => {

@@ -1,16 +1,17 @@
 import { ThemeContext } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
+import BREAKPOINT from "../../Media";
 const LogoStyles = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 14vw;
-  height: 14vw;
-  color: red;
-  @media (min-width: 768px) {
-    width: 5vw;
-    height: 3vw;
+  max-width: 12%;
+  max-height: 12%;
+
+  @media (min-width: ${BREAKPOINT.md}) {
+    width: 85px;
+    height: 85px;
   }
 `;
 const Logo = () => {
@@ -18,12 +19,7 @@ const Logo = () => {
   return (
     <LogoStyles>
       <a href="/">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          // width="80"
-          // height="80"
-          viewBox="0 0 80 80"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
           <g id="Group_2" transform="translate(-131 -182)">
             <circle
               id="Ellipse_4"

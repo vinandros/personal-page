@@ -12,10 +12,10 @@ const Wrapper = styled(GatsbyImage)`
   transition: box-shadow ease-in var(--color-transition);
   outline: ${({ dark }) => (dark ? "3px solid white" : null)};
   transition: outline ease-in var(--color-transition);
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     width: 100%;
     max-width: 475px;
-  }
+  } */
 `;
 
 export const HeroImg = () => {

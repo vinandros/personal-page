@@ -11,11 +11,7 @@ const HeroSection = styled.section`
   transition: background-color ease-in var(--color-transition);
 `;
 
-const HeroWrapper = styled.div`
-  @media (min-width: 768px) {
-    display: flex;
-  }
-`;
+const HeroWrapper = styled.div``;
 
 const Hero = () => {
   return (

@@ -9,6 +9,12 @@ const OptionsStyles = styled.div`
   outline: 1px solid var(--text-color);
   box-shadow: -1px -1px 2px var(--text-color);
   opacity: 0.8;
+  width: auto;
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Custom = () => {
