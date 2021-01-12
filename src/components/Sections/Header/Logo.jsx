@@ -1,6 +1,6 @@
-import { ThemeContext } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
+import ThemeContext from "../../../context/themeContext";
 import BREAKPOINT from "../../Media";
 const LogoStyles = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ const Logo = () => {
             <text
               id="V"
               transform="translate(144 232)"
-              fill="#fff"
+              fill={dark ? "#000" : "#fff"}
               fontSize="45"
               fontFamily="OpenSans-Bold, Open Sans"
               fontWeight="700"
@@ -44,7 +44,7 @@ const Logo = () => {
             <text
               id="A"
               transform="translate(165 244)"
-              fill="#fff"
+              fill={dark ? "#000" : "#fff"}
               fontSize="45"
               fontFamily="OpenSans-Bold, Open Sans"
               fontWeight="700"
