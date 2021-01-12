@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import Quote from "./Quote";
 import Welcome from "./Welcome";
+import { Link as LinkGatsby } from "gatsby";
 
 const HomeSection = styled.main`
   width: 100%;
@@ -10,14 +11,16 @@ const HomeSection = styled.main`
   height: 100vh;
 `;
 
-const Link = styled.a`
+const Link = styled(LinkGatsby)`
   align-self: center;
-  margin-top: 4rem;
-  outline: 2px outset black;
+  margin-top: 6vh;
+  outline: 2px outset var(--secondary-color);
   padding: 0.2rem 1.5rem;
-  color: var(--text-color);
+  color: var(--bg-color);
   opacity: 0.87;
   font-weight: bold;
+  background-color: var(--text-color);
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
 `;
 
 const Home = () => {
@@ -25,7 +28,9 @@ const Home = () => {
     <HomeSection id="home">
       <Welcome />
       <Quote />
-      <Link href="#about">Go</Link>
+      <Link to="#about" href="#about">
+        Go
+      </Link>
     </HomeSection>
   );
 };

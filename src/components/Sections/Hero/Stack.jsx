@@ -42,7 +42,7 @@ const IconWrapper = styled.li`
     margin-left: 0.5rem;
   }
 
-  svg:first-child {
+  svg:first-of-type {
     margin-right: 1rem;
   }
 `;

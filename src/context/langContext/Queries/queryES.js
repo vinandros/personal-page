@@ -12,6 +12,7 @@ export const DataES = () => {
             personalquote
             about
             abouttwo
+            aboutthree
           }
         }
         allDatoCmsNavigationspanish(sort: { fields: id }) {

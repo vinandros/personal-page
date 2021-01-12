@@ -46,6 +46,7 @@ const GlobalStyles = () => {
           /* others color */
           --quote-bg: ${dark ? "#bbbbbb" : "#000"};
           --quote-text-color: ${dark ? "#000" : "#fff"};
+          --paragraph-color: ${dark ? "white" : "rgb(105, 105, 105)"}
 
           --primary-color: #212121;
           --primary-color-light: #484848;
