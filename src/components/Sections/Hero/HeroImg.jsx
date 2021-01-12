@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import GatsbyImage from "gatsby-image";
 import styled from "@emotion/styled";
-import ThemeContext from "../../../context/themeContext/themeProvider";
+import ThemeContext from "../../../context/themeContext";
 
 const Wrapper = styled(GatsbyImage)`
   max-width: 768px;

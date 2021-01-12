@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-import ThemeContext from "../../../context/themeContext/themeProvider";
+import ThemeContext from "../../../context/themeContext";
 
 const Label = styled.label`
   background-color: var(--text-primary-color);

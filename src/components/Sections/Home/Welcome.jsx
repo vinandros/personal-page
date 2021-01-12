@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import LangContext from "../../../context/langContext/langContext";
+import LangContext from "../../../context/langContext";
 import { Transition, SwitchTransition } from "react-transition-group";
 import BREAKPOINT from "../../Media";
 // import { keyframes } from "@emotion/react";
@@ -33,31 +33,27 @@ const Title = styled.h1`
   }
 `;
 
-const TitlebaseStyle = styled.span`
+const TitleStyle = styled.span`
   font-weight: 600;
 `;
-const Hi = styled(TitlebaseStyle)``;
 
-const Dev = styled(TitlebaseStyle)`
+const Dev = styled(TitleStyle)`
   color: var(--secondary-color);
   font-weight: 800;
 `;
 
-const Description = styled(TitlebaseStyle)``;
-
 const Welcome = () => {
-  const { heroData } = React.useContext(LangContext);
-  if (!heroData) return null;
-  const { title, titletwo, titlethree } = heroData;
+  const { home } = React.useContext(LangContext);
+  const { title, titletwo, titlethree } = home;
   return (
     <SwitchTransition mode="out-in">
       <Transition key={titletwo} timeout={100}>
         {(state) => (
           <Title state={state}>
-            <Hi>{title}</Hi> <br />
+            <TitleStyle>{title}</TitleStyle> <br />
             <Dev>{titletwo}</Dev>
             <br />
-            <Description>{titlethree}</Description>
+            <TitleStyle>{titlethree}</TitleStyle>
             <br />
           </Title>
         )}

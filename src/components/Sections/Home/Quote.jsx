@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { Transition, SwitchTransition } from "react-transition-group";
-import LangContext from "../../../context/langContext/langContext";
+import LangContext from "../../../context/langContext";
 import BREAKPOINT from "../../Media";
 
 const CodeQ = styled.code`
@@ -59,9 +59,8 @@ const PText = styled(baseStyleP)`
 `;
 
 const Quote = () => {
-  const { heroData } = React.useContext(LangContext);
-  if (!heroData) return null;
-  const { personalquote } = heroData;
+  const { quotes } = React.useContext(LangContext);
+  const { personalquote } = quotes;
   return (
     <CodeQ>
       <Blockquote>&lt;blockquote&gt;</Blockquote>

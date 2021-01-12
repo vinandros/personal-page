@@ -1,6 +1,6 @@
 import React from "react";
 import { Global, css } from "@emotion/react";
-import ThemeContext from "../../context/themeContext/themeProvider";
+import ThemeContext from "../../context/themeContext";
 import OpenSansExtBoldWoff from "../../fonts/open-sans-v18-latin-ext-800.woff";
 import OpenSansExtBoldWoff2 from "../../fonts/open-sans-v18-latin-ext-800.woff2";
 import OpenSansRegularWoff from "../../fonts/open-sans-v18-latin-ext-regular.woff2";
@@ -46,19 +46,18 @@ const GlobalStyles = () => {
           /* others color */
           --quote-bg: ${dark ? "#bbbbbb" : "#000"};
           --quote-text-color: ${dark ? "#000" : "#fff"};
-          --paragraph-color: ${dark ? "white" : "rgb(105, 105, 105)"}
-
-          --primary-color: #212121;
-          --primary-color-light: #484848;
-          --primary-color-dark: #000000;
+          --paragraph-color: ${dark ? "white" : "rgb(105, 105, 105)"};
           --secondary-color: #abf0ad;
-          --secondary-color-light: #fbfffc;
-          --secondary-color-dark: #97b498;
-
           /* transtions delays */
           --lang-transition: 0.5s;
           /* color transitions */
           --color-transition: 0.3s;
+
+          /* --primary-color: #212121;
+          --primary-color-light: #484848;
+          --primary-color-dark: #000000;
+          --secondary-color-light: #fbfffc;
+          --secondary-color-dark: #97b498; */
         }
         body {
           background-color: ${dark ? "#212121" : "#fff"};

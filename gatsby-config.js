@@ -6,12 +6,6 @@ module.exports = {
     siteUrl: `https://www.vinandros.com`,
   },
   plugins: [
-    {
-      resolve: "gatsby-source-datocms",
-      options: {
-        apiToken: process.env.DATO_CMS_API_KEY,
-      },
-    },
     "gatsby-plugin-emotion",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
@@ -32,8 +26,8 @@ module.exports = {
         name: `Personal Site`,
         short_name: `Portfolio`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
+        background_color: `#e5f1e4`,
+        theme_color: `#abf0ad`,
         display: `standalone`,
         icon: `src/images/icon.png`,
       },

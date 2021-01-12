@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-import LangContext from "../../../context/langContext/langContext";
+import LangContext from "../../../context/langContext";
 
 const Label = styled.label`
   background-color: var(--text-primary-color);

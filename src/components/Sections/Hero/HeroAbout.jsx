@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import LangContext from "../../../context/langContext/langContext";
+import LangContext from "../../../context/langContext";
 import Paragraph from "../../Paragraph";
 
 const Wrapper = styled.div`
@@ -10,19 +10,15 @@ const Wrapper = styled.div`
 `;
 
 const HeroAbout = () => {
-  const data = React.useContext(LangContext);
-  if (!data.heroData) return null;
-  const {
-    heroData: { about, abouttwo, aboutthree },
-  } = data;
-  console.log(data);
+  const { hero } = React.useContext(LangContext);
+  const { fistParagraph, secondParagraph, thirdParagraph } = hero;
   return (
     <Wrapper>
-      <Paragraph>{about}</Paragraph>
+      <Paragraph>{fistParagraph}</Paragraph>
       <br />
-      <Paragraph>{abouttwo}</Paragraph>
+      <Paragraph>{secondParagraph}</Paragraph>
       <br />
-      <Paragraph>{aboutthree}</Paragraph>
+      <Paragraph>{thirdParagraph}</Paragraph>
     </Wrapper>
   );
 };
