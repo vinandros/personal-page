@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import React from "react";
 import HeroImg from "./HeroImg";
-import HeroAbout from "./HeroAbout";
+import HeroAbout from "./Sections/Hero/HeroAbout";
 import Stack from "./Stack";
 
 const HeroSection = styled.section`

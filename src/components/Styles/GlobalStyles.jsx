@@ -1,31 +1,10 @@
 import React from "react";
 import { Global, css } from "@emotion/react";
-import ThemeContext from "../../context/themeContext";
-import OpenSansExtBoldWoff from "../../fonts/open-sans-v18-latin-ext-800.woff";
-import OpenSansExtBoldWoff2 from "../../fonts/open-sans-v18-latin-ext-800.woff2";
-import OpenSansRegularWoff from "../../fonts/open-sans-v18-latin-ext-regular.woff2";
-import OpenSansRegularWoff2 from "../../fonts/open-sans-v18-latin-ext-regular.woff2";
 
 const GlobalStyles = () => {
-  const { dark } = React.useContext(ThemeContext);
   return (
     <Global
-      dark={dark}
       styles={css`
-        @font-face {
-          font-family: "Open Sans";
-          font-style: normal;
-          font-weight: 800;
-          src: local(""), url(${OpenSansExtBoldWoff2}) format("woff2"),
-            url(${OpenSansExtBoldWoff}) format("woff");
-        }
-        @font-face {
-          font-family: "Open Sans";
-          font-style: normal;
-          font-weight: 600;
-          src: local(""), url(${OpenSansRegularWoff2}) format("woff2"),
-            url(${OpenSansRegularWoff}) format("woff");
-        }
         html {
           box-sizing: border-box;
           margin: 0;
@@ -40,18 +19,14 @@ const GlobalStyles = () => {
           box-sizing: inherit;
         }
         :root {
-          --bg-color: ${dark ? "#212121" : "#fff"};
-          --text-color: ${dark ? "#fff" : "#000"};
+          --bg-color: #212121;
+          --text-color: #fff;
 
           /* others color */
-          --quote-bg: ${dark ? "#bbbbbb" : "#000"};
-          --quote-text-color: ${dark ? "#000" : "#fff"};
-          --paragraph-color: ${dark ? "white" : "rgb(105, 105, 105)"};
+          --quote-bg: #bbbbbb;
+          --quote-text-color: #000;
+          --paragraph-color: rgb(105, 105, 105);
           --secondary-color: #abf0ad;
-          /* transtions delays */
-          --lang-transition: 0.5s;
-          /* color transitions */
-          --color-transition: 0.3s;
 
           /* --primary-color: #212121;
           --primary-color-light: #484848;
@@ -60,9 +35,8 @@ const GlobalStyles = () => {
           --secondary-color-dark: #97b498; */
         }
         body {
-          background-color: ${dark ? "#212121" : "#fff"};
-          transition: background-color ease-in 0.3s;
-          font-family: "Open Sans";
+          background-color: #212121;
+          font-family: "Times New Roman", Times, serif;
         }
         ul,
         ol {
@@ -70,7 +44,6 @@ const GlobalStyles = () => {
         }
         a {
           text-decoration: none;
-          color: black;
         }
       `}
     />

@@ -2,7 +2,6 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import GatsbyImage from "gatsby-image";
 import styled from "@emotion/styled";
-import ThemeContext from "../../../context/themeContext";
 
 const Wrapper = styled(GatsbyImage)`
   max-width: 768px;
@@ -19,8 +18,6 @@ const Wrapper = styled(GatsbyImage)`
 `;
 
 export const HeroImg = () => {
-  const { dark } = React.useContext(ThemeContext);
-
   const data = useStaticQuery(graphql`
     {
       images: allFile(filter: { relativePath: { eq: "profile.jpg" } }) {
@@ -41,7 +38,7 @@ export const HeroImg = () => {
   // console.log(data);
   const img = data.images.edges[0].node.childImageSharp.fluid;
   // console.log(img);
-  return <Wrapper dark={dark} fluid={img} alt="profile photo" />;
+  return <Wrapper fluid={img} alt="profile photo" />;
 };
 
 export default HeroImg;
