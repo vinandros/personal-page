@@ -9,9 +9,6 @@ const Wrapper = styled.div`
   height: 100%;
   max-width: 12vw;
   max-height: 12vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-start; */
 
   @media (min-width: ${BREAKPOINT.md}) {
     width: 85px;

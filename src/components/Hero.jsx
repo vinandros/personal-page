@@ -1,28 +1,15 @@
 import styled from "@emotion/styled";
-
-import React from "react";
-import HeroImg from "./HeroImg";
-import HeroAbout from "./Sections/Hero/HeroAbout";
-import Stack from "./Stack";
-
-const HeroSection = styled.section`
+import BREAKPOINT from "./Media";
+export default styled.section`
   width: 100%;
-  background-color: var(--bg-color);
-  transition: background-color ease-in var(--color-transition);
+  height: auto;
 `;
 
-const HeroWrapper = styled.div``;
+const HeroWrapper = styled.div`
+  display: grid;
+  @media (min-width: ${BREAKPOINT.md}) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
 
-const Hero = () => {
-  return (
-    <HeroSection id="about">
-      <HeroWrapper>
-        <HeroImg />
-        <HeroAbout />
-      </HeroWrapper>
-      <Stack />
-    </HeroSection>
-  );
-};
-
-export default Hero;
+export { HeroWrapper };

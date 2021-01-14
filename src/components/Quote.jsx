@@ -41,30 +41,3 @@ const PText = styled(baseStyleP)`
   }
 `;
 export { Quote, Blockquote, Tag, PText };
-
-// const Quote = () => {
-//   const { quotes } = React.useContext(LangContext);
-//   if (!quotes) return null;
-//   const { personalquote } = quotes;
-//   return (
-//     <CodeQ>
-//       <Blockquote>&lt;blockquote&gt;</Blockquote>
-//       <Tag>&lt;p&gt;</Tag>
-//       <SwitchTransition mode="out-in">
-//         <Transition key={personalquote} timeout={100}>
-//           {(state) => <PText state={state}>“{personalquote}”</PText>}
-//         </Transition>
-//       </SwitchTransition>
-//       <Tag>&lt;/p&gt;</Tag>
-//       <cite>
-//         <Tag>&lt;cite&gt; </Tag>
-//         <PText>Avicii(Tim Bergling)</PText>
-//         <Tag> &lt;/cite&gt;</Tag>
-//       </cite>
-
-//       <Blockquote>&lt;/blockquote&gt;</Blockquote>
-//     </CodeQ>
-//   );
-// };
-
-// export default Quote;

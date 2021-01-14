@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 
-const Paragraph = styled.p`
+export default styled.p`
   color: var(--paragraph-color);
   opacity: 0.87;
-  font-weight: 600;
+  font-size: clamp(1rem, 1rem + 1vw, 1.8rem);
+  margin-bottom: 1.5rem;
 `;
-
-export default Paragraph;
