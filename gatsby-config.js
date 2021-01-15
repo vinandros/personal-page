@@ -19,7 +19,6 @@ module.exports = {
       },
       __key: "images",
     },
-    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

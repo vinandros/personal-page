@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import Logo from "./Logo";
-import SocialMedia from "./SocialMedia";
+// import SocialMedia from "./SocialMedia";
 import BREAKPOINT from "../../Media";
 
 const HeaderS = styled.header`
@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <HeaderS>
       <Logo />
-      <SocialMedia />
+      {/* <SocialMedia /> */}
     </HeaderS>
   );
 };

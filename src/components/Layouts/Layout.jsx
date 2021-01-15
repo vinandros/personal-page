@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import BREAKPOINT from "../Media";
 const LayoutS = styled.main`
   margin: 0 auto;
-  max-width: 87vw;
+  max-width: 90.8vw;
   @media (min-width: ${BREAKPOINT.md}) {
     width: 87vw;
     max-width: 1200px;

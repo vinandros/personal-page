@@ -9,7 +9,18 @@ import HeroImg from "../components/HeroImg";
 import HeroDescription from "../components/HeroDescription";
 import Paragraph from "../components/Paragraph";
 import Skills from "../components/Skills";
-import Stack from "../components/Stack";
+import Bootstrap from "../components/Icons/Bootstrap";
+import CSS3 from "../components/Icons/CSS3";
+import Emotion from "../components/Icons/Emotion";
+import Git from "../components/Icons/Git";
+import Html5 from "../components/Icons/Html5";
+import ES6 from "../components/Icons/ES6";
+import Mongo from "../components/Icons/Mongo";
+import Next from "../components/Icons/Next";
+import Node from "../components/Icons/Node";
+import Reactjs from "../components/Icons/Reactjs";
+import Redux from "../components/Icons/Redux";
+import Gatsbyjs from "../components/Icons/Gatsbyjs";
 
 export default function IndexPage({ data }) {
   // console.log(data);
@@ -17,9 +28,10 @@ export default function IndexPage({ data }) {
     <Layout title="FullStack Web Development">
       <Home>
         <MainTitle>
-          &nbsp;&nbsp;Hi, I'm Kevin. <br />
+          <sup>&lceil;</sup>Hi, I'm Kevin. <br />
           <Dev>&nbsp;&nbsp;FullStack Web Developer,</Dev> <br />
           &nbsp;&nbsp;Geek and Kind of Nerd.
+          <sub>&nbsp;&nbsp;&nbsp;&rfloor;</sub>
         </MainTitle>
         <Quote>
           <Blockquote>&lt;blockquote&gt;</Blockquote>
@@ -72,7 +84,44 @@ export default function IndexPage({ data }) {
           velit sunt cillum anim pariatur non occaecat. Mollit amet et aliqua
           incididunt excepteur ut magna adipisicing ea.
         </Paragraph>
-        <Stack />
+        <ul>
+          <li>
+            <CSS3 />
+          </li>
+          <li>
+            <Html5 />
+          </li>
+          <li>
+            <ES6 />
+          </li>
+          <li>
+            <Bootstrap />
+          </li>
+          <li>
+            <Git />
+          </li>
+          <li>
+            <Next />
+          </li>
+          <li>
+            <Mongo />
+          </li>
+          <li>
+            <Node />
+          </li>
+          <li>
+            <Reactjs />
+          </li>
+          <li>
+            <Redux />
+          </li>
+          <li>
+            <Emotion />
+          </li>
+          <li>
+            <Gatsbyjs />
+          </li>
+        </ul>
       </Skills>
     </Layout>
   );
