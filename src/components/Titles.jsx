@@ -31,4 +31,4 @@ const Subtitle = styled.h2`
   color: var(--text-color);
 `;
 
-export { MainTitle, TitleStyle, Dev, Subtitle };
+export { MainTitle, Dev, Subtitle };

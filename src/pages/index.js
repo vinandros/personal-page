@@ -1,13 +1,13 @@
 import React from "react";
 import Layout from "../components/Layouts/Layout";
 import Home, { HomeLink } from "../components/Home";
-import { MainTitle, TitleStyle, Dev, Subtitle } from "../components/Titles";
+import { MainTitle, Dev, Subtitle } from "../components/Titles";
 import { Quote, Blockquote, Tag, PText } from "../components/Quote";
 import Hero, { HeroWrapper } from "../components/Hero";
 import { graphql } from "gatsby";
 import HeroImg from "../components/HeroImg";
 import HeroDescription from "../components/HeroDescription";
-import Paragraph from "../components/Paragraph";
+import Paragraph, { SimpleText } from "../components/Paragraph";
 import Skills from "../components/Skills";
 import Bootstrap from "../components/Icons/Bootstrap";
 import CSS3 from "../components/Icons/CSS3";
@@ -21,6 +21,9 @@ import Node from "../components/Icons/Node";
 import Reactjs from "../components/Icons/Reactjs";
 import Redux from "../components/Icons/Redux";
 import Gatsbyjs from "../components/Icons/Gatsbyjs";
+import ListItemIcon from "../components/Icons/ListItemIcon";
+import ListItem from "../components/ListItem";
+import Ul from "../components/Ul";
 
 export default function IndexPage({ data }) {
   // console.log(data);
@@ -31,7 +34,7 @@ export default function IndexPage({ data }) {
           <sup>&lceil;</sup>Hi, I'm Kevin. <br />
           <Dev>&nbsp;&nbsp;FullStack Web Developer,</Dev> <br />
           &nbsp;&nbsp;Geek and Kind of Nerd.
-          <sub>&nbsp;&nbsp;&nbsp;&rfloor;</sub>
+          <sub>&nbsp;&nbsp;&nbsp;&nbsp;&rfloor;</sub>
         </MainTitle>
         <Quote>
           <Blockquote>&lt;blockquote&gt;</Blockquote>
@@ -79,49 +82,74 @@ export default function IndexPage({ data }) {
       <Skills id="skills">
         <Subtitle>My skills</Subtitle>
         <Paragraph>
-          Aute magna aute ad dolore officia dolore pariatur. Laborum ullamco
-          commodo cillum duis velit velit. Ad amet anim aute mollit sint ex amet
-          velit sunt cillum anim pariatur non occaecat. Mollit amet et aliqua
-          incididunt excepteur ut magna adipisicing ea.
+          Through my studies, I've gained a solid understanding of computer
+          science, also I'am a self-taught web developer who have reach the
+          enough knowledge to become a full Stack developer.
         </Paragraph>
-        <ul>
-          <li>
+        <Ul>
+          <ListItem>
+            <ListItemIcon />
             <CSS3 />
-          </li>
-          <li>
+            <SimpleText>CSS</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
             <Html5 />
-          </li>
-          <li>
+            <SimpleText>HTML</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
             <ES6 />
-          </li>
-          <li>
-            <Bootstrap />
-          </li>
-          <li>
+            <SimpleText>JavaScript</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
             <Git />
-          </li>
-          <li>
-            <Next />
-          </li>
-          <li>
-            <Mongo />
-          </li>
-          <li>
-            <Node />
-          </li>
-          <li>
-            <Reactjs />
-          </li>
-          <li>
-            <Redux />
-          </li>
-          <li>
+            <SimpleText>Git</SimpleText>
+          </ListItem>
+
+          <ListItem>
+            <ListItemIcon />
+            <Bootstrap />
+            <SimpleText>Bootstrap</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
             <Emotion />
-          </li>
-          <li>
+            <SimpleText>Emotion</SimpleText>
+          </ListItem>
+
+          <ListItem>
+            <ListItemIcon />
+            <Reactjs />
+            <SimpleText>React</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
+            <Redux />
+            <SimpleText>Redux</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
+            <Next />
+            <SimpleText>Next</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
             <Gatsbyjs />
-          </li>
-        </ul>
+            <SimpleText>Gatsby</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
+            <Mongo />
+            <SimpleText>Mongo</SimpleText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon />
+            <Node />
+            <SimpleText>Node</SimpleText>
+          </ListItem>
+        </Ul>
       </Skills>
     </Layout>
   );
