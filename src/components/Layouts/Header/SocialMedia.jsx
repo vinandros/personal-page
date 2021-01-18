@@ -30,6 +30,15 @@ const Line = styled.div`
   }
 `;
 
+const Link = styled.a`
+  & img {
+    filter: invert(50%);
+  }
+  & img:hover {
+    filter: invert(0%);
+  }
+`;
+
 const SocialMedia = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -57,11 +66,6 @@ const SocialMedia = () => {
     }
   `);
 
-  const Link = styled.a`
-    & img:hover {
-      filter: invert(50%);
-    }
-  `;
   return (
     <Wrapper>
       <Line />

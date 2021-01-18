@@ -1,14 +1,16 @@
 import React from "react";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/Layouts/Layout";
-import Home, { HomeLink } from "../components/Home";
-import { MainTitle, Dev, Subtitle } from "../components/Titles";
+import { ProjectLink } from "../components/Links";
+import { MainTitle, Dev, Subtitle, ProjectTitle } from "../components/Titles";
 import { Quote, Blockquote, Tag, PText } from "../components/Quote";
-import Hero, { HeroWrapper } from "../components/Hero";
-import { graphql } from "gatsby";
+import HeroWrapper from "../components/Hero";
 import HeroImg from "../components/HeroImg";
 import HeroDescription from "../components/HeroDescription";
-import Paragraph, { SimpleText } from "../components/Paragraph";
-import Skills from "../components/Skills";
+import Paragraph, {
+  ParagraphWrapper,
+  SimpleText,
+} from "../components/Paragraph";
 import Bootstrap from "../components/Icons/Bootstrap";
 import CSS3 from "../components/Icons/CSS3";
 import Emotion from "../components/Icons/Emotion";
@@ -24,17 +26,28 @@ import Gatsbyjs from "../components/Icons/Gatsbyjs";
 import ListItemIcon from "../components/Icons/ListItemIcon";
 import ListItem from "../components/ListItem";
 import Ul from "../components/Ul";
+import Main from "../components/Main";
+import Section from "../components/Section";
+import ImgProject from "../components/ImgProject";
+import { ProjectsWrapper, CardProject } from "../components/Projects";
+import {
+  Form,
+  FromGroup,
+  Input,
+  SubmitBottom,
+  TextArea,
+} from "../components/From";
 
 export default function IndexPage({ data }) {
   // console.log(data);
   return (
     <Layout title="FullStack Web Development">
-      <Home>
+      <Main>
         <MainTitle>
           <sup>&lceil;</sup>Hi, I'm Kevin. <br />
           <Dev>&nbsp;&nbsp;FullStack Web Developer,</Dev> <br />
           &nbsp;&nbsp;Geek and Kind of Nerd.
-          <sub>&nbsp;&nbsp;&nbsp;&nbsp;&rfloor;</sub>
+          <sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rfloor;</sub>
         </MainTitle>
         <Quote>
           <Blockquote>&lt;blockquote&gt;</Blockquote>
@@ -53,23 +66,24 @@ export default function IndexPage({ data }) {
 
           <Blockquote>&lt;/blockquote&gt;</Blockquote>
         </Quote>
-        <HomeLink to="#about" href="#about">
+        {/* <HomeLink to="#about" href="#about">
           Go
-        </HomeLink>
-      </Home>
-      <Hero id="about">
-        <Subtitle>Who I am?</Subtitle>
+        </HomeLink> */}
+      </Main>
+      <Section id="about">
         <HeroWrapper>
-          <HeroImg fluid={data.file.childImageSharp.fluid} />
+          <HeroImg fluid={data.profile.childImageSharp.fluid} alt="My face" />
           <HeroDescription>
+            <Subtitle>Who I am?</Subtitle>
             <Paragraph>
+              My name is Kevin Alvarado Varela, I'm from San Carlos, Costa Rica.
               I am a self-taught web developer with a strong eye on new
               technologies, looking for new opportunities to grow up and improve
               my skills.
             </Paragraph>
             <Paragraph>
               I started programming at the school, this caught my curiosity and
-              interesting for technology.
+              my interesting for technology.
             </Paragraph>
             <Paragraph>
               Now I am a Computer Engineering graduated from Costa Rica
@@ -77,26 +91,30 @@ export default function IndexPage({ data }) {
             </Paragraph>
           </HeroDescription>
         </HeroWrapper>
-      </Hero>
+      </Section>
 
-      <Skills id="skills">
+      <Section id="skills">
         <Subtitle>My skills</Subtitle>
-        <Paragraph>
-          Through my studies, I've gained a solid understanding of computer
-          science, also I'am a self-taught web developer who have reach the
-          enough knowledge to become a full Stack developer.
-        </Paragraph>
+        <ParagraphWrapper>
+          <Paragraph>
+            Through my studies, I've gained a solid understanding of computer
+            science, also I'm a self-taught web developer who have reach the
+            enough knowledge to become a full Stack developer.
+          </Paragraph>
+        </ParagraphWrapper>
+
         <Ul>
-          <ListItem>
-            <ListItemIcon />
-            <CSS3 />
-            <SimpleText>CSS</SimpleText>
-          </ListItem>
           <ListItem>
             <ListItemIcon />
             <Html5 />
             <SimpleText>HTML</SimpleText>
           </ListItem>
+          <ListItem>
+            <ListItemIcon />
+            <CSS3 />
+            <SimpleText>CSS</SimpleText>
+          </ListItem>
+
           <ListItem>
             <ListItemIcon />
             <ES6 />
@@ -150,19 +168,164 @@ export default function IndexPage({ data }) {
             <SimpleText>Node</SimpleText>
           </ListItem>
         </Ul>
-      </Skills>
+      </Section>
+      <Section id="projects">
+        <Subtitle>What I've been working on </Subtitle>
+        <ParagraphWrapper>
+          <Paragraph>
+            Following my curiosity I spend time learning new technologies and
+            making examples projects by myself. Here are some of them.
+          </Paragraph>
+        </ParagraphWrapper>
+        <ProjectsWrapper>
+          <CardProject>
+            <Link
+              href="https://product-hunt-firebase.netlify.app"
+              target="_blank"
+              referrerpolicy="no-referrer"
+            >
+              <ImgProject
+                fluid={data.phmain.childImageSharp.fluid}
+                alt="Product hunt logo"
+              />
+            </Link>
+            <ProjectTitle>Clone Page</ProjectTitle>
+            <Paragraph>
+              Following my curiosity I spend time learning new technologies and
+              making examples
+            </Paragraph>
+            <ProjectLink
+              href="https://product-hunt-firebase.netlify.app"
+              target="_blank"
+              referrerpolicy="no-referrer"
+            >
+              <p>View project</p>
+            </ProjectLink>
+          </CardProject>
+
+          <CardProject>
+            <Link
+              href="https://redux-crud-va.netlify.app"
+              target="_blank"
+              referrerpolicy="no-referrer"
+            >
+              <ImgProject
+                fluid={data.rcmain.childImageSharp.fluid}
+                alt="Redux - crud home page"
+              />
+            </Link>
+            <ProjectTitle>Redux CRUD</ProjectTitle>
+            <Paragraph>
+              Following my curiosity I spend time learning new technologies and
+              making examples
+            </Paragraph>
+            <ProjectLink
+              href="https://redux-crud-va.netlify.app"
+              target="_blank"
+              referrerpolicy="no-referrer"
+            >
+              <p>View project</p>
+            </ProjectLink>
+          </CardProject>
+          <CardProject>
+            <Link
+              href="https://project-handler.netlify.app"
+              target="_blank"
+              referrerpolicy="no-referrer"
+            >
+              <ImgProject
+                fluid={data.phhmain.childImageSharp.fluid}
+                alt="Product handler home page"
+              />
+            </Link>
+            <ProjectTitle>Project Handler</ProjectTitle>
+            <Paragraph>
+              Following my curiosity I spend time learning new technologies and
+              making examples
+            </Paragraph>
+            <ProjectLink
+              href="https://project-handler.netlify.app"
+              target="_blank"
+              referrerpolicy="no-referrer"
+            >
+              <p>View project</p>
+            </ProjectLink>
+          </CardProject>
+        </ProjectsWrapper>
+      </Section>
+      <Section id="contact">
+        <Subtitle>Contact Me</Subtitle>
+        <Form
+          id="ContactForm"
+          name="ContactForm"
+          method="POST"
+          data-netlify="true"
+        >
+          <FromGroup>
+            <Input
+              type="text"
+              required
+              placeholder="Name"
+              id="name"
+              name="name"
+            />
+            <Input
+              type="email"
+              required
+              placeholder="Email"
+              id="email"
+              name="email"
+            />
+          </FromGroup>
+          <FromGroup></FromGroup>
+          <Input
+            type="text"
+            placeholder="Subject"
+            id="subject"
+            name="subject"
+            required
+          />
+
+          <TextArea />
+          <SubmitBottom type="submit">Send</SubmitBottom>
+        </Form>
+      </Section>
     </Layout>
   );
 }
 
 export const query = graphql`
   {
-    file(relativePath: { eq: "profile.jpg" }) {
+    profile: file(relativePath: { eq: "profile2.png" }) {
       childImageSharp {
-        fluid(maxWidth: 768) {
+        fluid(maxWidth: 768, maxHeight: 900) {
           ...GatsbyImageSharpFluid
         }
       }
+    }
+    phmain: file(relativePath: { eq: "phMain.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+      relativePath
+    }
+    rcmain: file(relativePath: { eq: "rcMain.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+      relativePath
+    }
+    phhmain: file(relativePath: { eq: "phhMain.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+      relativePath
     }
   }
 `;

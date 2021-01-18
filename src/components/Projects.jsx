@@ -1,18 +1,21 @@
 import styled from "@emotion/styled";
-import React from "react";
-
-const ProjectsSection = styled.section`
-  height: 100vh;
-  width: 100%;
-  background-color: fuchsia;
+import BREAKPOINT from "./Media";
+const ProjectsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8rem 12rem;
+  @media (min-width: ${BREAKPOINT.md}) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
-const Projects = () => {
-  return (
-    <ProjectsSection id="projects">
-      <h1>Projects Section</h1>
-    </ProjectsSection>
-  );
-};
+const CardProject = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* padding: 15px; */
+  background-color: rgba(255, 255, 255, 0.01);
+  /* box-shadow: 2px 2px 3px black; */
+  border-radius: 2px;
+`;
 
-export default Projects;
+export { ProjectsWrapper, CardProject };

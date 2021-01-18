@@ -5,22 +5,20 @@ import GatsbyImage from "gatsby-image";
 import React from "react";
 import BREAKPOINT from "../../Media";
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  max-width: 12vw;
-  max-height: 12vh;
+  width: 40px;
+  height: 40px;
 
   @media (min-width: ${BREAKPOINT.md}) {
-    width: 85px;
-    height: 85px;
+    width: 70px;
+    height: 70px;
   }
 `;
 const Logo = () => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "icon.png" }) {
+      file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 200, maxHeight: 200) {
             ...GatsbyImageSharpFluid
           }
         }

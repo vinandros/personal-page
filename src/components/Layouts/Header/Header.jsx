@@ -12,6 +12,7 @@ const HeaderS = styled.header`
   @media (min-width: ${BREAKPOINT.md}) {
     margin-top: 3rem;
   }
+  margin-bottom: 3rem;
 `;
 
 const Header = () => {

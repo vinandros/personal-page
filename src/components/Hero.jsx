@@ -1,15 +1,9 @@
 import styled from "@emotion/styled";
 import BREAKPOINT from "./Media";
-export default styled.section`
-  width: 100%;
-  height: auto;
-`;
 
-const HeroWrapper = styled.div`
+export default styled.div`
   display: grid;
   @media (min-width: ${BREAKPOINT.md}) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 8fr 10fr;
   }
 `;
-
-export { HeroWrapper };

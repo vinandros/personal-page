@@ -11,6 +11,7 @@ const LayoutS = styled.main`
     width: 87vw;
     max-width: 1200px;
   }
+  margin-bottom: 10rem;
 `;
 
 const Layout = ({ children, title }) => {

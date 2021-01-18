@@ -19,8 +19,10 @@ const GlobalStyles = () => {
           box-sizing: inherit;
         }
         :root {
-          --bg-color: #212121;
-          --text-color: #fff;
+          /* --bg-color: #121212; */
+          --bg-color: white;
+          /* --text-color: #fff; */
+          --text-color: black;
 
           /* others color */
           --quote-bg: #bbbbbb;
@@ -36,8 +38,12 @@ const GlobalStyles = () => {
           --secondary-color-dark: #97b498; */
         }
         body {
-          background-color: #212121;
-          font-family: "Times New Roman", Times, serif;
+          background-color: white;
+          /* background-color: #121212; */
+          /* background-color: #1f241f; */
+          /* font-family: "Times New Roman", Times, serif; */
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         }
         ul,
         ol {
@@ -45,6 +51,12 @@ const GlobalStyles = () => {
         }
         a {
           text-decoration: none;
+        }
+        a:visited {
+          color: black;
+        }
+        a:link {
+          color: black;
         }
       `}
     />
