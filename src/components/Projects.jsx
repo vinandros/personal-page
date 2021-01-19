@@ -12,9 +12,7 @@ const ProjectsWrapper = styled.div`
 const CardProject = styled.div`
   display: flex;
   flex-direction: column;
-  /* padding: 15px; */
   background-color: rgba(255, 255, 255, 0.01);
-  /* box-shadow: 2px 2px 3px black; */
   border-radius: 2px;
 `;
 

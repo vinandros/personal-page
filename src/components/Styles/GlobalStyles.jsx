@@ -28,20 +28,10 @@ const GlobalStyles = () => {
           --quote-bg: #bbbbbb;
           --quote-text-color: #000;
           --paragraph-color: rgb(146, 146, 146);
-          /* --paragraph-color: rgb(105, 105, 105); */
           --secondary-color: #abf0ad;
-
-          /* --primary-color: #212121;
-          --primary-color-light: #484848;
-          --primary-color-dark: #000000;
-          --secondary-color-light: #fbfffc;
-          --secondary-color-dark: #97b498; */
         }
         body {
           background-color: white;
-          /* background-color: #121212; */
-          /* background-color: #1f241f; */
-          /* font-family: "Times New Roman", Times, serif; */
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
             Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         }

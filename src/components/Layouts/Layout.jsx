@@ -4,6 +4,7 @@ import GlobalStyles from "../Styles/GlobalStyles";
 import Header from "./Header/Header";
 import { Helmet } from "react-helmet";
 import BREAKPOINT from "../Media";
+import Footer from "./Footer";
 const LayoutS = styled.main`
   margin: 0 auto;
   max-width: 93vw;
@@ -25,6 +26,7 @@ const Layout = ({ children, title }) => {
         <Header />
         {children}
       </LayoutS>
+      <Footer />
     </>
   );
 };

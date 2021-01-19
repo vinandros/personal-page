@@ -1,6 +1,25 @@
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import BREAKPOINT from "./Media";
-// const EaseIn = keyframes``;
+const EaseIn = keyframes`
+  from {
+    margin-left:-200px;
+    opacity:0;
+  }
+  to {
+    margin-left:0;
+    opacity:1;
+  }
+`;
+
+const ColorChange = keyframes`
+  from {
+    color:var(--text-color);;
+  }
+  to {
+    color:var(--secondary-color);
+  }
+`;
 
 const MainTitle = styled.h1`
   font-size: clamp(1rem, 1.07rem + 2vw, 4rem);
@@ -13,6 +32,8 @@ const MainTitle = styled.h1`
     margin-top: 4rem;
   }
   margin-bottom: 2.5rem;
+  animation-name: ${EaseIn};
+  animation-duration: 1s;
 `;
 
 const TitleStyle = styled.span`
@@ -22,6 +43,8 @@ const TitleStyle = styled.span`
 const Dev = styled(TitleStyle)`
   color: var(--secondary-color);
   font-weight: 800;
+  animation-name: ${ColorChange};
+  animation-duration: 1s;
 `;
 
 const Subtitle = styled.h2`

@@ -42,9 +42,11 @@ export default function IndexPage({ data }) {
   // console.log(data);
   return (
     <Layout title="FullStack Web Development">
-      <Main>
+      <Main id="main">
         <MainTitle>
-          <sup>&lceil;</sup>Hi, I'm Kevin. <br />
+          <sup>&lceil;</sup>
+          <span>Hi, I'm Kevin. </span>
+          <br />
           <Dev>&nbsp;&nbsp;FullStack Web Developer,</Dev> <br />
           &nbsp;&nbsp;Geek and Kind of Nerd.
           <sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rfloor;</sub>
@@ -66,9 +68,6 @@ export default function IndexPage({ data }) {
 
           <Blockquote>&lt;/blockquote&gt;</Blockquote>
         </Quote>
-        {/* <HomeLink to="#about" href="#about">
-          Go
-        </HomeLink> */}
       </Main>
       <Section id="about">
         <HeroWrapper>
@@ -183,6 +182,7 @@ export default function IndexPage({ data }) {
               href="https://product-hunt-firebase.netlify.app"
               target="_blank"
               referrerpolicy="no-referrer"
+              rel="noopener noreferrer"
             >
               <ImgProject
                 fluid={data.phmain.childImageSharp.fluid}
@@ -198,6 +198,7 @@ export default function IndexPage({ data }) {
               href="https://product-hunt-firebase.netlify.app"
               target="_blank"
               referrerpolicy="no-referrer"
+              rel="noopener noreferrer"
             >
               <p>View project</p>
             </ProjectLink>
@@ -208,6 +209,7 @@ export default function IndexPage({ data }) {
               href="https://redux-crud-va.netlify.app"
               target="_blank"
               referrerpolicy="no-referrer"
+              rel="noopener noreferrer"
             >
               <ImgProject
                 fluid={data.rcmain.childImageSharp.fluid}
@@ -223,6 +225,7 @@ export default function IndexPage({ data }) {
               href="https://redux-crud-va.netlify.app"
               target="_blank"
               referrerpolicy="no-referrer"
+              rel="noopener noreferrer"
             >
               <p>View project</p>
             </ProjectLink>
@@ -232,6 +235,7 @@ export default function IndexPage({ data }) {
               href="https://project-handler.netlify.app"
               target="_blank"
               referrerpolicy="no-referrer"
+              rel="noopener noreferrer"
             >
               <ImgProject
                 fluid={data.phhmain.childImageSharp.fluid}
@@ -247,6 +251,7 @@ export default function IndexPage({ data }) {
               href="https://project-handler.netlify.app"
               target="_blank"
               referrerpolicy="no-referrer"
+              rel="noopener noreferrer"
             >
               <p>View project</p>
             </ProjectLink>

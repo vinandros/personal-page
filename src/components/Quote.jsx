@@ -1,5 +1,17 @@
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import BREAKPOINT from "./Media";
+
+const EaseIn = keyframes`
+  from {
+    margin-left:-200px;
+    opacity:0;
+  }
+  to {
+    margin-left:0;
+    opacity:1;
+  }
+`;
 
 const Quote = styled.code`
   display: block;
@@ -7,10 +19,10 @@ const Quote = styled.code`
   padding: 1rem;
   color: var(--quote-text-color);
   background-color: var(--quote-bg);
-  transition: background-color ease-in var(--color-transition);
-  transition: color ease-in var(--color-transition);
   margin-top: 5vh;
   outline: 3px solid var(--secondary-color);
+  animation-name: ${EaseIn};
+  animation-duration: 1s;
 `;
 
 const Blockquote = styled.blockquote`
