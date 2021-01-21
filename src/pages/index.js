@@ -281,6 +281,7 @@ export default function IndexPage({ data }) {
             data-netlify="true"
             action="/"
           >
+            <input type="hidden" name="ContactForm" value="ContactForm" />
             <FromGroup>
               <Input
                 type="text"
@@ -306,7 +307,7 @@ export default function IndexPage({ data }) {
               required
             />
 
-            <TextArea required />
+            <TextArea message="text" required />
             <SubmitBottom type="submit">Send</SubmitBottom>
           </Form>
         </FormWrapper>
