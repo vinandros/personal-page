@@ -58,9 +58,10 @@ const Subtitle = styled.h2`
 const ProjectTitle = styled.h3`
   display: block;
   width: 100%;
-  font-size: clamp(1.2rem, 1.2rem + 2vw, 3rem);
+  font-size: clamp(1.2rem, 1.2rem + 2vw, 2.5rem);
   opacity: 0.87;
   color: var(--text-color);
+  margin-top: 1rem;
 `;
 
 export { MainTitle, Dev, Subtitle, ProjectTitle };

@@ -1,7 +1,7 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layouts/Layout";
-import { ProjectLink } from "../components/Links";
+import { ProjectsLink } from "../components/Links";
 import { MainTitle, Dev, Subtitle, ProjectTitle } from "../components/Titles";
 import { Quote, Blockquote, Tag, PText } from "../components/Quote";
 import HeroWrapper from "../components/Hero";
@@ -36,10 +36,13 @@ import {
   Input,
   SubmitBottom,
   TextArea,
+  FormWrapper,
+  TextContact,
 } from "../components/From";
+import Project from "../components/projects/Project";
+import Webpack from "../components/Icons/Webpack";
 
 export default function IndexPage({ data }) {
-  // console.log(data);
   return (
     <Layout title="FullStack Web Development">
       <Main id="main">
@@ -135,7 +138,11 @@ export default function IndexPage({ data }) {
             <Emotion />
             <SimpleText>Emotion</SimpleText>
           </ListItem>
-
+          <ListItem>
+            <ListItemIcon />
+            <Webpack />
+            <SimpleText>Webpack</SimpleText>
+          </ListItem>
           <ListItem>
             <ListItemIcon />
             <Reactjs />
@@ -177,123 +184,132 @@ export default function IndexPage({ data }) {
           </Paragraph>
         </ParagraphWrapper>
         <ProjectsWrapper>
+          <Project
+            project={{
+              id: 1,
+              title: "Clone Page",
+              tecnologies: [
+                { id: 1, tecnology: "next" },
+                { id: 2, tecnology: "react" },
+                { id: 3, tecnology: "emotion" },
+                { id: 4, tecnology: "git" },
+              ],
+              description:
+                "A clone page of Product Hunt Website, using React and Nextjs for Frontend and Firebase for Backend.",
+              imgName: "phProject.png",
+              altImg: "Product Hunt home Image",
+              githubUrl: "https://github.com/vinandros/nextapp",
+              siteUrl: "https://product-hunt-firebase.netlify.app",
+            }}
+          />
+          <Project
+            project={{
+              id: 2,
+              title: "Redux - CRUD",
+              tecnologies: [
+                { id: 1, tecnology: "react" },
+                { id: 2, tecnology: "redux" },
+                { id: 3, tecnology: "git" },
+              ],
+              description:
+                "Product CRUD using Redux and React Hooks, also using json-server package to Fake a REST API.",
+              imgName: "rcProject.png",
+              altImg: "Redux-CRUD home section",
+              githubUrl: "https://github.com/vinandros/redux-crud",
+              siteUrl: "https://redux-crud-va.netlify.app/",
+            }}
+          />
+          <Project
+            project={{
+              id: 3,
+              title: "Project Handler",
+              tecnologies: [
+                { id: 1, tecnology: "react" },
+                { id: 2, tecnology: "mongo" },
+                { id: 3, tecnology: "node" },
+                { id: 4, tecnology: "git" },
+              ],
+              description:
+                "An specific project to practice React Hooks and JWT-Authentication with Nodejs and MongoDB.",
+              imgName: "phhProject.png",
+              altImg: "Project handler home Image",
+              githubUrl:
+                "https://github.com/vinandros/mern-projects-tasks-frontend",
+              siteUrl: "https://project-handler.netlify.app/",
+            }}
+          />
           <CardProject>
-            <Link
-              href="https://product-hunt-firebase.netlify.app"
+            <ProjectsLink
+              to="/projects"
               target="_blank"
-              referrerpolicy="no-referrer"
+              referrerPolicy="no-referrer"
               rel="noopener noreferrer"
             >
               <ImgProject
-                fluid={data.phmain.childImageSharp.fluid}
-                alt="Product hunt logo"
+                fluid={data.allprojects.childImageSharp.fluid}
+                alt="All projects home page"
               />
-            </Link>
-            <ProjectTitle>Clone Page</ProjectTitle>
+            </ProjectsLink>
+            <ProjectTitle>Others projects</ProjectTitle>
             <Paragraph>
-              Following my curiosity I spend time learning new technologies and
-              making examples
+              I had build differents projects to practice others tecnologies,
+              like Webpack, Bootstrap and D3js. Check out all my work.
             </Paragraph>
-            <ProjectLink
-              href="https://product-hunt-firebase.netlify.app"
+            <ProjectsLink
+              to="/projects"
               target="_blank"
-              referrerpolicy="no-referrer"
+              referrerPolicy="no-referrer"
               rel="noopener noreferrer"
             >
-              <p>View project</p>
-            </ProjectLink>
-          </CardProject>
-
-          <CardProject>
-            <Link
-              href="https://redux-crud-va.netlify.app"
-              target="_blank"
-              referrerpolicy="no-referrer"
-              rel="noopener noreferrer"
-            >
-              <ImgProject
-                fluid={data.rcmain.childImageSharp.fluid}
-                alt="Redux - crud home page"
-              />
-            </Link>
-            <ProjectTitle>Redux CRUD</ProjectTitle>
-            <Paragraph>
-              Following my curiosity I spend time learning new technologies and
-              making examples
-            </Paragraph>
-            <ProjectLink
-              href="https://redux-crud-va.netlify.app"
-              target="_blank"
-              referrerpolicy="no-referrer"
-              rel="noopener noreferrer"
-            >
-              <p>View project</p>
-            </ProjectLink>
-          </CardProject>
-          <CardProject>
-            <Link
-              href="https://project-handler.netlify.app"
-              target="_blank"
-              referrerpolicy="no-referrer"
-              rel="noopener noreferrer"
-            >
-              <ImgProject
-                fluid={data.phhmain.childImageSharp.fluid}
-                alt="Product handler home page"
-              />
-            </Link>
-            <ProjectTitle>Project Handler</ProjectTitle>
-            <Paragraph>
-              Following my curiosity I spend time learning new technologies and
-              making examples
-            </Paragraph>
-            <ProjectLink
-              href="https://project-handler.netlify.app"
-              target="_blank"
-              referrerpolicy="no-referrer"
-              rel="noopener noreferrer"
-            >
-              <p>View project</p>
-            </ProjectLink>
+              <p>Go to projects</p>
+            </ProjectsLink>
           </CardProject>
         </ProjectsWrapper>
       </Section>
       <Section id="contact">
-        <Subtitle>Contact Me</Subtitle>
-        <Form
-          id="ContactForm"
-          name="ContactForm"
-          method="POST"
-          data-netlify="true"
-        >
-          <FromGroup>
+        <Subtitle>Let's Build Something Together</Subtitle>
+        <FormWrapper>
+          <TextContact>
+            Feel free to reach out if you're looking for a developer, have a
+            question, or just want to connect. <br /> <br />
+            <strong>Have a nice day!</strong>
+          </TextContact>
+          <Form
+            id="ContactForm"
+            name="ContactForm"
+            method="POST"
+            data-netlify="true"
+            action="/"
+          >
+            <FromGroup>
+              <Input
+                type="text"
+                required
+                placeholder="Name"
+                id="name"
+                name="name"
+              />
+              <Input
+                type="email"
+                required
+                placeholder="Email"
+                id="email"
+                name="email"
+              />
+            </FromGroup>
+            <FromGroup></FromGroup>
             <Input
               type="text"
+              placeholder="Subject"
+              id="subject"
+              name="subject"
               required
-              placeholder="Name"
-              id="name"
-              name="name"
             />
-            <Input
-              type="email"
-              required
-              placeholder="Email"
-              id="email"
-              name="email"
-            />
-          </FromGroup>
-          <FromGroup></FromGroup>
-          <Input
-            type="text"
-            placeholder="Subject"
-            id="subject"
-            name="subject"
-            required
-          />
 
-          <TextArea />
-          <SubmitBottom type="submit">Send</SubmitBottom>
-        </Form>
+            <TextArea required />
+            <SubmitBottom type="submit">Send</SubmitBottom>
+          </Form>
+        </FormWrapper>
       </Section>
     </Layout>
   );
@@ -314,7 +330,6 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
-      relativePath
     }
     rcmain: file(relativePath: { eq: "rcMain.png" }) {
       childImageSharp {
@@ -322,7 +337,6 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
-      relativePath
     }
     phhmain: file(relativePath: { eq: "phhMain.png" }) {
       childImageSharp {
@@ -330,7 +344,13 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
-      relativePath
+    }
+    allprojects: file(relativePath: { eq: "allprojects.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
   }
 `;

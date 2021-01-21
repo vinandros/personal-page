@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import BREAKPOINT from "./Media";
+import Paragraph from "./Paragraph";
 
 const Form = styled.form`
-  width: 50%;
-  margin-top: 3rem;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 5rem;
   @media (max-width: ${BREAKPOINT.md}) {
     width: 100%;
   }
@@ -19,13 +21,13 @@ const FromGroup = styled.div`
 `;
 
 const Input = styled.input`
-  height: 3rem;
+  height: 2rem;
   width: 100%;
   border-style: none;
   font-size: clamp(0.8rem, 0.8rem + 1vw, 1rem);
   border-bottom: 3px solid var(--secondary-color);
-  margin-bottom: 1rem;
-
+  margin-bottom: 2rem;
+  box-shadow: none;
   &:focus::placeholder {
     color: transparent;
   }
@@ -36,7 +38,8 @@ const Input = styled.input`
     border-bottom: 3px solid var(--secondary-color);
     outline: none;
   }
-  &:invalid {
+
+  &:focus:invalid {
     box-shadow: none;
     border-bottom: 3px solid red;
   }
@@ -62,10 +65,42 @@ const TextArea = styled.textarea`
   height: 200px;
   outline: 2px solid var(--secondary-color);
   border: none;
+  font-family: inherit;
   margin-top: 1rem;
   &:focus {
     outline: 3px solid var(--secondary-color);
   }
+  &:focus:invalid {
+    box-shadow: none;
+    outline: 3px solid red;
+  }
+  & > strong {
+    color: black;
+  }
+`;
+const FormWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  @media (min-width: ${BREAKPOINT.md}) {
+    grid-template-columns: 2fr 2fr;
+  }
 `;
 
-export { Form, Input, SubmitBottom, TextArea, FromGroup };
+const TextContact = styled(Paragraph)`
+  width: 90%;
+  margin-top: 2rem;
+  @media (min-width: ${BREAKPOINT.md}) {
+    margin-top: 5rem;
+    width: 70%;
+  }
+`;
+
+export {
+  TextContact,
+  FormWrapper,
+  Form,
+  Input,
+  SubmitBottom,
+  TextArea,
+  FromGroup,
+};

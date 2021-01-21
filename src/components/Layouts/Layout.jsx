@@ -12,16 +12,19 @@ const LayoutS = styled.main`
     width: 87vw;
     max-width: 1200px;
   }
-  margin-bottom: 10rem;
+  @media (min-width: ${BREAKPOINT.md}) {
+    margin-bottom: 10rem;
+  }
+  margin-bottom: 4rem;
 `;
 
 const Layout = ({ children, title }) => {
   return (
     <>
       <GlobalStyles />
-      <LayoutS>
+      <LayoutS id="top">
         <Helmet>
-          <title>{`Vin Andros${title ? " - " + title : ""}`}</title>
+          <title>{`Kevin ${title ? " | " + title : ""}`}</title>
         </Helmet>
         <Header />
         {children}

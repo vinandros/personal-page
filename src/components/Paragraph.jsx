@@ -22,6 +22,7 @@ export default styled(TextBaseStyle)`
 const ParagraphWrapper = styled.div`
   display: block;
   width: 100%;
+  margin-bottom: 3rem;
   @media (min-width: ${BREAKPOINT.md}) {
     width: 60%;
   }
