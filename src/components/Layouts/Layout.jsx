@@ -48,6 +48,7 @@ const Layout = ({ children, title, content }) => {
         >
           <meta charSet="utf-8" />
           <title>{`Kevin ${title ? " | " + title : ""}`}</title>
+          <meta name="description" content={content} />
         </Helmet>
         <Header />
         {children}

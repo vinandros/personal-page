@@ -18,7 +18,7 @@ const Main = styled.main`
 
 export default function projects() {
   return (
-    <Layout title="Projects">
+    <Layout title="Projects" content="List of projects">
       <MainTitle>Projects</MainTitle>
 
       <Main>
