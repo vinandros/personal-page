@@ -4,7 +4,7 @@ import BREAKPOINT from "../Media";
 
 const FooterSection = styled.section`
   width: 100%;
-  background-color: #7f7f7f;
+  background-color: #212121;
   display: flex;
   justify-content: space-between;
   align-items: center;

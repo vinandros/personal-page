@@ -32,19 +32,23 @@ import ImgProject from "../components/ImgProject";
 import { ProjectsWrapper, CardProject } from "../components/Projects";
 import {
   Form,
-  FromGroup,
+  FormGroup,
   Input,
   SubmitBottom,
   TextArea,
   FormWrapper,
   TextContact,
-} from "../components/From";
+  Label,
+} from "../components/Form";
 import Project from "../components/projects/Project";
 import Webpack from "../components/Icons/Webpack";
 
 export default function IndexPage({ data }) {
   return (
-    <Layout title="FullStack Web Development">
+    <Layout
+      title="FullStack Web Development"
+      content="main page personal portfolio site"
+    >
       <Main id="main">
         <MainTitle>
           <sup>&lceil;</sup>
@@ -244,6 +248,7 @@ export default function IndexPage({ data }) {
               target="_blank"
               referrerPolicy="no-referrer"
               rel="noopener noreferrer"
+              aria-label="Projects"
             >
               <ImgProject
                 fluid={data.allprojects.childImageSharp.fluid}
@@ -261,7 +266,9 @@ export default function IndexPage({ data }) {
               referrerPolicy="no-referrer"
               rel="noopener noreferrer"
             >
-              <p>Go to projects</p>
+              <p>
+                Go to projects <span>{">"}</span>
+              </p>
             </ProjectsLink>
           </CardProject>
         </ProjectsWrapper>
@@ -281,33 +288,54 @@ export default function IndexPage({ data }) {
             data-netlify="true"
             action="/"
           >
-            <input type="hidden" name="ContactForm" value="ContactForm" />
-            <FromGroup>
+            <Label htmlFor="ContactForm">Netlify</Label>
+            <input
+              aria-label="netlify"
+              type="hidden"
+              name="ContactForm"
+              value="ContactForm"
+            />
+
+            <FormGroup>
+              <Label htmlFor="name">Name</Label>
               <Input
                 type="text"
                 required
                 placeholder="Name"
                 id="name"
                 name="name"
+                aria-label="name"
               />
+
+              <Label htmlFor="email">email</Label>
               <Input
                 type="email"
                 required
                 placeholder="Email"
                 id="email"
                 name="email"
+                aria-label="email"
               />
-            </FromGroup>
-            <FromGroup></FromGroup>
+            </FormGroup>
+            <Label htmlFor="subject">subject</Label>
             <Input
               type="text"
               placeholder="Subject"
               id="subject"
               name="subject"
               required
+              aria-label="subject"
             />
 
-            <TextArea message="text" required />
+            <Label htmlFor="message">message</Label>
+            <TextArea
+              aria-label="message"
+              id="message"
+              name="message"
+              message="text"
+              required
+            />
+
             <SubmitBottom type="submit">Send</SubmitBottom>
           </Form>
         </FormWrapper>

@@ -18,12 +18,35 @@ const LayoutS = styled.main`
   margin-bottom: 4rem;
 `;
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, content }) => {
   return (
     <>
       <GlobalStyles />
       <LayoutS id="top">
-        <Helmet>
+        <Helmet
+          htmlAttributes={{
+            lang: "en",
+          }}
+          meta={[
+            {
+              name: `description`,
+              content: "Personal Web site, portfoolio",
+            },
+            {
+              property: `og:title`,
+              content: title,
+            },
+            {
+              property: `og:description`,
+              content: "Personal Web site, portfoolio",
+            },
+            {
+              property: `og:type`,
+              content: `website`,
+            },
+          ]}
+        >
+          <meta charSet="utf-8" />
           <title>{`Kevin ${title ? " | " + title : ""}`}</title>
         </Helmet>
         <Header />

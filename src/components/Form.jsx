@@ -11,7 +11,7 @@ const Form = styled.form`
   }
 `;
 
-const FromGroup = styled.div`
+const FormGroup = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 2rem;
@@ -95,6 +95,11 @@ const TextContact = styled(Paragraph)`
   }
 `;
 
+const Label = styled.label`
+  visibility: hidden;
+  position: absolute;
+`;
+
 export {
   TextContact,
   FormWrapper,
@@ -102,5 +107,6 @@ export {
   Input,
   SubmitBottom,
   TextArea,
-  FromGroup,
+  FormGroup,
+  Label,
 };

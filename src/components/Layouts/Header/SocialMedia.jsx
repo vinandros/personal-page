@@ -109,6 +109,7 @@ const SocialMedia = () => {
         href="https://github.com/vinandros"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Github"
       >
         <Img fixed={data.github.childImageSharp.fixed} />
       </Link>
@@ -116,6 +117,7 @@ const SocialMedia = () => {
         href="https://www.instagram.com/vinandros/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Instagram"
       >
         <Img fixed={data.instagram.childImageSharp.fixed} />
       </Link>
@@ -123,6 +125,7 @@ const SocialMedia = () => {
         href="https://vinandros.medium.com/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Medium"
       >
         <Img fixed={data.medium.childImageSharp.fixed} />
       </Link>

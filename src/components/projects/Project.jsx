@@ -30,6 +30,7 @@ const Project = ({ project }) => {
         target="_blank"
         referrerPolicy="no-referrer"
         rel="noopener noreferrer"
+        aria-label={project.title}
       >
         <ProjectImg filename={project.imgName} alt={project.altImg} />
       </a>

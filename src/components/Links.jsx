@@ -2,13 +2,15 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 const ProjectsLink = styled(Link)`
-  border-bottom: 2px solid var(--secondary-color);
   display: inline-block;
   width: auto;
   p {
-    font-weight: bold;
-    font-style: oblique;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-weight: 800;
+    border-bottom: 2px solid var(--secondary-color);
     padding: 10px 0;
+    text-transform: uppercase;
   }
 `;
 
@@ -19,7 +21,6 @@ const OutlineButtom = styled.a`
   line-height: 1;
   padding-bottom: 0.2em;
   font-weight: bold;
-  color: white;
   text-transform: uppercase;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   & span {

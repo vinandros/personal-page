@@ -27,8 +27,10 @@ const GlobalStyles = () => {
           /* others color */
           --quote-bg: #bbbbbb;
           --quote-text-color: #000;
-          --paragraph-color: rgb(146, 146, 146);
-          --secondary-color: #abf0ad;
+          /* --paragraph-color: rgb(146, 146, 146); */
+          --paragraph-color: rgb(58, 58, 58);
+          /* --secondary-color: #abf0ad; */
+          --secondary-color: rgb(88, 185, 119);
         }
         body {
           background-color: white;
