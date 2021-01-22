@@ -9,7 +9,7 @@ const ProjectsWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
   }
   @media (min-width: ${BREAKPOINT.lg}) {
-    grid-gap: 8rem 12rem;
+    grid-gap: 5rem 5rem;
   }
   margin-top: 5rem;
 `;
